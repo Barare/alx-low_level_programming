@@ -1,6 +1,7 @@
-include "main.h"
-/** *factorial - factorial of a given number
- *@n: pointer block of memmory to fill
+#include "main.h"
+/**
+ *factorial - factorial of a given number
+ *@n: pointer block of a memory to fill
  *Return: factorial
  */
 
