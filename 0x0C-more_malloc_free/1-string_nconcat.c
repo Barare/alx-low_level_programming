@@ -1,51 +1,51 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * string_nconcat - concatenates two strings.
- * @s1: first string
- * @s2: second string
- * @n: index
- * Return: char pointer
+ * string_nconcat - Entry point
+ *@s1: string 1
+ *@s2: string 2
+ *@n: number of bytes
+ * Return: pointer should point to a newly allocated space in memory or NULL
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	unsigned int size1 = 0, size2 = 0, i;
+	char *strnew = NULL;
+	unsigned int i, n1, n2, j, count, palabras;
 
+	count = 0;
+	palabras = 0;
 	if (s1 == NULL)
 		s1 = "";
-
 	if (s2 == NULL)
 		s2 = "";
-
-	while (s1[size1] != '\0')
+	for (n1 = 0; s1[n1] != '\0'; n1++)
+		;
+	for (n2 = 0; s2[n2] != '\0'; n2++)
+		;
+	if (n >= n2)
 	{
-		size1++;
-	}
+		palabras = n2;
 
-	while (s2[size2] != '\0')
+	} else
 	{
-		size2++;
+		for (n2 = 0; n2 < n; n2++)
+			palabras++;
 	}
-
-	if (n > size2)
-	n = size2;
-	p = malloc((size1 + n + 1) * sizeof(char));
-
-	if (p == NULL)
-		return (0);
-
-	for (i = 0; i < size1; i++)
+	strnew = (char *)malloc((n1 + n2 + 1) * sizeof(char));
+	if (strnew == NULL)
 	{
-		p[i] = s1[i];
+		return (NULL);
 	}
-
-	for (; i < (size1 + n); i++)
+	for (i = 0; s1[i] != '\0'; i++)
+		strnew[i] = s1[i];
+	for (j = 0; j < palabras; i++)
 	{
-		p[i] = s2[i - size1];
+		strnew[i] = s2[count];
+		count++;
+		j++;
 	}
-	p[i] = '\0';
-
-return (p);
+	strnew[i] = '\0';
+	return (strnew);
 }
