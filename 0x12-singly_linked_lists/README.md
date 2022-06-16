@@ -1,1 +1,2 @@
-Singly Lists Readme
+General
+When and why using linked lists vs arrays
