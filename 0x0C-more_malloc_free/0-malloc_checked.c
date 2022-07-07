@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,3 +20,4 @@ void *malloc_checked(unsigned int b)
 	}
 	return (p);
 }
+>>>>>>> 38f4ca88d1309809bad6a553730ccf64e8e5a248
