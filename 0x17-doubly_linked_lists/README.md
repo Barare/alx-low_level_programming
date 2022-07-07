@@ -1,1 +1,1 @@
-double linked lists
+This is a README for my 0x17-doubly_linked_lists project!
